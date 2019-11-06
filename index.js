@@ -27,7 +27,7 @@ Airplane.prototype.land = function () {
 */
 
 /*
-  TASK 1
+  TASK 1.
     - Write a Person Constructor that initializes `name` and `age` from arguments.
     
     - All instances of Person should initialize with an empty `stomach` array.
