@@ -16,7 +16,7 @@ Airplane.prototype.takeOff = function () {
   this.isFlying = true;
 };
 Airplane.prototype.land = function () {
-  this.isFlying = false;
+  this.isFlying = false;  
 };
 
 
@@ -55,6 +55,7 @@ Person.prototype.poop = function (){
 if (Person.prototype.poop){
   this.stomach.length = 0;
 }
+
 }
 
 Person.prototype.toString = function (){
@@ -101,8 +102,16 @@ Car.prototype.drive = function (milesDriven){
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age)
+  this.favoriteToy = favoriteToy;
+}
 
+Baby.prototype = Object.create(Person.prototype);
+
+Baby.prototype.play = function(x){
+  let x = this.favoriteToy;
+  return "Playing with " + x;
 }
 
 /* 
